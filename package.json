@@ -1,7 +1,7 @@
 {
-  "name": "Proxy-Server",
+  "name": "brawl-stats-server",
   "version": "1.0.0",
-  "description": "Proxy Server",
+  "description": "brawl-stats-server",
   "main": "server.js",
   "dependencies": {
     "@types/node": "^20.11.0",
