@@ -19,8 +19,8 @@ const TOKEN = process.env.TOKEN;
 
 let error_page;
 
-/*const PRIVATE_KEY = _fs.readFileSync("../keys/privateKey.pem", "utf8");
-const CERTIFICATE = _fs.readFileSync("../keys/certificate.crt", "utf8");
+const PRIVATE_KEY = _fs.readFileSync("./keys/privateKey.pem", "utf8");
+const CERTIFICATE = _fs.readFileSync("./keys/certificate.crt", "utf8");
 const ENCRYPTION_KEY = process.env.ENCRYPTION_KEY;
 const CREDENTIALS = { "key": PRIVATE_KEY, "cert": CERTIFICATE };
 const https_server = _https.createServer(CREDENTIALS, app);
@@ -28,14 +28,14 @@ const https_server = _https.createServer(CREDENTIALS, app);
 https_server.listen(PORT, () => {
     init();
     console.log("Proxy server listening on port " + PORT);
-});*/
+});
 
-const http_server = _http.createServer(app); 
+/*const http_server = _http.createServer(app); 
 
 http_server.listen(PORT, () => {
     init();
     console.log("Proxy server listening on port " + PORT);
-});
+});*/
 
 function init() {
     _fs.readFile("./static/error.html", function (err, data) {
