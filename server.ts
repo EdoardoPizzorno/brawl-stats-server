@@ -130,6 +130,21 @@ app.get("/api/:collection/:id", (req, res, next) => {
         });
 });
 
+app.get("/api/:collection/:id/:subcollection", (req, res, next) => {
+    let collection = req.params.collection;
+    let id = req.params.id;
+    let subcollection = req.params.subcollection;
+
+    const _URL = baseURL + collection + "/%23" + id + "/" + subcollection;
+    _axios.get(_URL, { headers: { "Authorization": "Bearer " + TOKEN } })
+        .then((response) => {
+            res.status(200).send(response.data);
+        })
+        .catch((err) => {
+            res.status(err.response.status).send(err.message);
+        });
+});
+
 //#region INTERNAL FUNCTIONS
 
 
